@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- css -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" />
+        <link rel="stylesheet" type="text/css" href="/css/index.css">
+
+        <!-- scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>
+        <script type="text/javascript" src="/js/index.js"></script>
+
+    </head>
+
+    <body>
+        <div class="container-fluid no-padding">
+          <!-- Main Row -->
+          <div class="row">
+
+            <!-- Wordcloud image column -->
+            <div class="col-md-12 col-lg-7">
+              <div class="img"></div>
+            </div>
+
+            <!-- Cta Column-->
+            <div class="col-md-12 col-lg-5">
+                <div id="desikitabInfo" class="card">
+								  <div class="card-body">
+								  	<div id="desikitabTitleAndMotto">
+									    <h1 id="desikitabTitle" class="card-title">DesiKitab</h1>
+									    <h3 id="desikitabMotto" class="card-subtitle mb-2">Indian literature. Rejuvenated</h3>
+									  </div>
+								    <div id="desikitabPromise" class="card-text">
+								    	<p>Love Indian books? We do too!<br> Your favourite Indian book. In audio, ebook and print. <br> Less than 3 clicks away.</p>
+								    </div>
+
+								    <div id="cta">
+								    	<p>Sign up to get notified when we launch</p>
+								    	<div class="form-group">
+    										<input id="enteredEmail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+    										<button id="notifyBtn" type="submit" class="btn btn-success">I'm in!</button>
+								    	</div>
+								    </div>
+
+								    <div id="sayHello">
+								    	<p>Want to talk? Say hello at <a href="mailto:hello@desikitab.com">hello@desikitab.com</a> 
+								    </div>
+								  </div>
+								</div>
+            </div>
+
+          </div>
+
+          <div id="successModal">
+          	<div id="successMessage">
+          		<p>Thanks for signing up! We will get desikitab to you as soon as possible.</p>
+          	</div>
+          	<button id="successModalCloseBtn" class="btn-btn-success" data-izimodal-close="">Close</button>
+          </div>
+
+
+          <div id="invalidEmailModal">
+          	<div id="invalidEmailMessage">
+          		<p>Please double check your email address!</p>
+          	</div>
+          	<button id="invalidEmailModalCloseBtn" class="btn-btn-success" data-izimodal-close="">Close</button>
+          </div>
+
+
+          <div id="failureModal">
+          	<div id="failureMessage">
+          		<p>We had a problem getting you on the list. Please do reach out to us at <a href="mailto:hello@desikitab.com">hello@desikitab.com</p>
+          	</div>
+          	<button id="failureModalCloseBtn" class="btn-btn-success" data-izimodal-close="">Close</button>
+          </div>
+        </div>
+    </body>
+</html>

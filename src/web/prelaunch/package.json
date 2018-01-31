@@ -1,0 +1,20 @@
+{
+  "name": "prelaunch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nraval1729",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "consolidate": "^0.15.0",
+    "dotenv": "^4.0.0",
+    "email-validator": "^1.1.1",
+    "express": "^4.16.2",
+    "hogan": "^1.0.2",
+    "mysql": "^2.15.0"
+  }
+}
