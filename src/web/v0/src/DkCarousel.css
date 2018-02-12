@@ -1,0 +1,8 @@
+.Carousel {
+	width: 75%;
+	text-align: center;
+}
+
+.carousel .slide {
+	background: #ffffff;
+}
