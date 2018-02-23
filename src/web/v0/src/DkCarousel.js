@@ -55,6 +55,7 @@ export default class DkCarousel extends Component {
         autoPlay       : true,
         interval       : 5000,
         showStatus     : false,
+        showThumbs     : false,
         showIndicators : false,
         onClickItem    : this.handleItemClick
     }

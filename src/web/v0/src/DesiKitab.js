@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Center from 'react-center';
 import './DesiKitab.css';
 import DkCarousel from './DkCarousel';
-// import DkPlayer from './DkPlayer';
+import DkPlayer from './DkPlayer';
 import metadata from './Metadata';
 
 export default class DesiKitab extends Component {
@@ -18,6 +18,10 @@ export default class DesiKitab extends Component {
     });
   }
 
+  handleClick = () => {
+    this.setState({currentUrl: ''});
+  }
+
   render() {
     return (
         <div className="DesiKitab">
@@ -25,6 +29,9 @@ export default class DesiKitab extends Component {
             <DkCarousel
               metadata           = {metadata}
               onCurrentUrlChange = {this.handleCurrentUrlChange}
+            />
+            <DkPlayer
+              url = {this.state.currentUrl}
             />
             </Center>
         </div>

@@ -1,0 +1,17 @@
+body, html, #root {
+	/*background-color:#D1C4E9;*/
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.DesikitabBookItem {
+	background: #fff;
+  border-radius: 2px;
+  padding: 1em;
+}
+
+h1 {
+	font-family: 'Patua One', cursive;
+}
