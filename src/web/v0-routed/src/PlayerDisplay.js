@@ -62,6 +62,7 @@ export default class PlayerDisplay extends Component {
   }
 
 	render() {
+		const fullUrl = this.props.baseStreamingUrl + this.state.chapters[this.state.currChapterIndex].url;
 		return (
 			<div style={styles.PlayerDisplay}>
 				<div style={styles.NowPlaying}>
@@ -79,7 +80,7 @@ export default class PlayerDisplay extends Component {
           width = "0px"
           height = "0px"
           // the url of the chapter at the currChapterIndex
-          url = {this.state.chapters[this.state.currChapterIndex].url}
+          url = {fullUrl}
           playing = {this.state.playing}
           config={{ file: {forceAudio: true} }}
           onProgress = {this.onProgress}
@@ -126,14 +127,16 @@ const styles = {
 	PlayerDisplay: {
 		display: 'flex',
 		flexDirection: 'column',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+
 	},
 	NowPlaying: {
-		margin: 20
+		margin: 10
 	},
 	Controls: {
 		alignSelf: 'flex-start',
-		margin: 15
+		margin: 15,
+		flex: '1 1 0'
 	},
 	ControlIcon: {
 		fontSize: 36

@@ -22,12 +22,18 @@ export default class ChapterList extends Component {
   }
 	render() {
 		return (
-			<div>
+			<div style={styles.ChapterList}>
 				<h2 style={{marginLeft: 15, textAlign:'left'}}>Chapters</h2>
-				<List style={{borderBottom: '1px solid black', maxHeight: 325, overflow:'auto'}}>
+				<List style={{borderBottom: '1px solid black', maxHeight: 345, overflow:'auto'}}>
 					{this.generateChapterListItems()}
 				</List>
 			</div>
 			);
 	}
+}
+
+const styles = {
+  ChapterList: {
+    flexGrow: 2
+  }
 }

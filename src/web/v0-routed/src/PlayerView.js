@@ -17,28 +17,30 @@ export default class PlayerView extends Component {
 
 	render() {
 		return (
-			<div style={styles.Player}>
-				<div>
-					<TopNavBar 
+			<div style={styles.PlayerView}>
+				<TopNavBar 
 						bookName={this.props.currentBook.bookName}
 						{...this.props}
-					/>
+				/>
+				<div>
 					<ChapterList
 					 onChapterChange = {this.handleChapterChange}
 					 chapters={this.props.currentBook.chapters}
 					/>
+					<PlayerDisplay
+					 baseStreamingUrl = {this.props.currentBook.baseStreamingUrl}
+					 chapters = {this.props.currentBook.chapters}
+					 currChapterIndex = {this.state.currChapterIndex}
+					 bookName = {this.props.currentBook.bookName}
+					/>
 				</div>
-				<PlayerDisplay
-				 chapters = {this.props.currentBook.chapters}
-				 currChapterIndex = {this.state.currChapterIndex}
-				/>
 			</div>
 			);
 	}
 }
 
 const styles = {
-	Player: {
+	PlayerView: {
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'space-between',
