@@ -13,7 +13,7 @@ export default class ChapterList extends Component {
                 className = "ChapterListItem"
                 button 
                 key={chapter["url"]}
-                onClick = {() => this.props.onChapterChange(chapter)}
+                onClick = {() => this.props.onChapterChange(index)}
               >
                 {primaryText}
               </ListItem>

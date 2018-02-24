@@ -10,8 +10,19 @@ export default class PlayerDisplay extends Component {
 		this.state = {
 			playing: false,
 			played: 0,
-			currUrl: ''
+			chapters: this.props.chapters,
+			currChapterIndex: this.props.currChapterIndex
 		}
+	}
+
+// Happens when PlayerView rerenders PlayerDisplay
+// because the user clicked on a particular chapter
+// from the ChapterList. In this case we update the 
+// state to reflect the new currChapterIndex
+	componentWillReceiveProps(nextProps) {
+		this.setState({
+			currChapterIndex: nextProps.currChapterIndex
+		})
 	}
 
 	ref = player => {
@@ -24,7 +35,14 @@ export default class PlayerDisplay extends Component {
   }
 
   onEnded = (e) => {
-  	this.setState({currUrl: this.props.nowPlaying.nextUrl});
+  	// setState after at least 2 seconds to prevent
+  	// rapid fire audio lol
+  	setTimeout(() => {this.setState((prevState) => {
+  		// If the previous chapter was NOT the last chapter in this book
+  		// we will increment the currChapterIndex
+  		if(prevState.currChapterIndex !== prevState.chapters.length-1)
+  			return {currChapterIndex: prevState.currChapterIndex+1};
+  	})}, 2000);
   }
 
   handlePlayPauseButtonClick = () => {
@@ -47,7 +65,7 @@ export default class PlayerDisplay extends Component {
 		return (
 			<div style={styles.PlayerDisplay}>
 				<div style={styles.NowPlaying}>
-					{this.props.nowPlaying.name}
+					{this.state.chapters[this.state.currChapterIndex].name}
 				</div>
 				<Progress played={this.state.played}/>
 				<Controls
@@ -60,10 +78,12 @@ export default class PlayerDisplay extends Component {
           ref={this.ref}
           width = "0px"
           height = "0px"
-          url = {this.props.nowPlaying.url}
+          // the url of the chapter at the currChapterIndex
+          url = {this.state.chapters[this.state.currChapterIndex].url}
           playing = {this.state.playing}
           config={{ file: {forceAudio: true} }}
           onProgress = {this.onProgress}
+          onEnded    = {this.onEnded}
         />
 			</div>
 		);

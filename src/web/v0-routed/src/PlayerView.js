@@ -7,26 +7,31 @@ export default class PlayerView extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currChapter: {
-				name: "Now playing",
-				url: "",
-				nextUrl: ""
-			}
+			currChapterIndex: 0
 		};
 	}
 
-	handleChapterChange = (chapter) => {
-		this.setState({currChapter: chapter});
+	handleChapterChange = (chapterIndex) => {
+		this.setState({currChapterIndex: chapterIndex});
 	}
 
 	render() {
 		return (
 			<div style={styles.Player}>
 				<div>
-					<TopNavBar bookName={this.props.currentBook.bookName} {...this.props}/>
-					<ChapterList onChapterChange = {this.handleChapterChange} chapters={this.props.currentBook.chapters}/>
+					<TopNavBar 
+						bookName={this.props.currentBook.bookName}
+						{...this.props}
+					/>
+					<ChapterList
+					 onChapterChange = {this.handleChapterChange}
+					 chapters={this.props.currentBook.chapters}
+					/>
 				</div>
-				<PlayerDisplay nowPlaying = {this.state.currChapter}/>
+				<PlayerDisplay
+				 chapters = {this.props.currentBook.chapters}
+				 currChapterIndex = {this.state.currChapterIndex}
+				/>
 			</div>
 			);
 	}
